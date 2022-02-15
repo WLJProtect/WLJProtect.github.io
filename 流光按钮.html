@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>流光按钮</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		background-color: black;
+	}
+	a{
+		text-decoration: none;
+		position: absolute;
+		left: 50%;
+		top:70%;
+		transform: translate(-50%,-50%);
+		font-size:24px;  
+/*		设置颜色分布*/
+		background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+		background-size: 400%; /*把衣服弄大*/
+		width: 300px;
+		height: 100px;
+		color:white;
+		line-height: 100px;
+		text-align: center;
+/*		大写字母*/
+		text-transform: uppercase;
+		border-radius: 50px;
+		z-index: 1;
+	}
+	a::before{
+		content:"";
+		position: absolute;
+		left: -5px;
+		right: -5px;
+		top:-5px;
+		bottom: -5px;
+		background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+		background-size:400%;
+		border-radius: 50px;
+		filter: blur(20px);  /*设置边框模糊*/
+		z-index: -1;
+	}
+	a:hover::before{
+		animation:  sun 8s infinite;
+	}
+	a:hover{
+		animation:  sun 8s infinite;
+	}
+	@keyframes sun{                        /*动画*/
+		100%{
+			background-position: -400% 0 ;
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+</style>
+<body>
+	<a href="JavaScript:;">XCXY1314</a>
+	<script>
+	var P = document.querySelector('a');
+	var body = document.querySelector('body');
+		flag = 0 ;
+	P.onclick = function(){
+		if(flag === 0)
+		{
+		body.style.background = 'white';
+			flag = 1;
+		}else if(flag ===1)
+			{
+				body.style.background = 'pink';
+				flag = 2;
+			}
+		 else if (flag ===2)
+			 {
+				 body.style.background = 'burlywood';
+				 flag = 3;
+			 }
+		 else if (flag ===3)
+			 {
+				 body.style.background = 'sandybrown';
+				 flag = 0;
+			 }
+	}
+	
+	</script>
+</body>
+</html>
